@@ -3,14 +3,14 @@ package com.example.nestedrvdemo.ui.main.viewholder
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nestedrvdemo.databinding.ItemNestedRvLayoutBinding
+import com.example.nestedrvdemo.databinding.ItemOuterNestedRvLayoutBinding
 import com.example.nestedrvdemo.ui.main.adapter.NestedAdapter
 import com.example.nestedrvdemo.ui.main.data.item.NestedItem
 import com.example.nestedrvdemo.ui.main.data.item.OuterItemType
 import com.example.nestedrvdemo.utils.TAG
 
 class OuterNestedListViewHolder(
-    binding: ItemNestedRvLayoutBinding,
+    binding: ItemOuterNestedRvLayoutBinding,
     private val onClick: (NestedItem) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
 

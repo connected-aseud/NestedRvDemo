@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nestedrvdemo.ui.main.data.item.NestedItem
 import com.example.nestedrvdemo.ui.main.data.item.OuterItemType
 import com.example.nestedrvdemo.R
-import com.example.nestedrvdemo.databinding.ItemNestedRvLayoutBinding
 import com.example.nestedrvdemo.databinding.ItemOuterLayoutBinding
+import com.example.nestedrvdemo.databinding.ItemOuterNestedRvLayoutBinding
 import com.example.nestedrvdemo.ui.main.viewholder.OuterItemViewHolder
 import com.example.nestedrvdemo.ui.main.viewholder.OuterNestedListViewHolder
 
@@ -30,8 +30,8 @@ class OuterAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
             return when (viewType) {
-                R.layout.item_nested_rv_layout -> OuterNestedListViewHolder(
-                    binding = ItemNestedRvLayoutBinding.inflate(layoutInflater, parent, false),
+                R.layout.item_outer_nested_rv_layout -> OuterNestedListViewHolder(
+                    binding = ItemOuterNestedRvLayoutBinding.inflate(layoutInflater, parent, false),
                     onClick = onNestedItemClick
                 )
                 R.layout.item_outer_layout -> OuterItemViewHolder(
@@ -50,7 +50,7 @@ class OuterAdapter(
 
     override fun getItemViewType(position: Int): Int {
         return when (currentList[position]) {
-            is OuterItemType.NestedListItem -> R.layout.item_nested_rv_layout
+            is OuterItemType.NestedListItem -> R.layout.item_outer_nested_rv_layout
             is OuterItemType.OuterItem -> R.layout.item_outer_layout
         }
     }
